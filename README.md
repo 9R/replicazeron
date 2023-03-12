@@ -49,6 +49,10 @@ https://sites.google.com/view/alvaro-rosati/azeron-keypad-diy-tutorial
 
 ![oled](images/replicazeron_oled.JPG "oled")
 
+## Wireing
+
+The buttons are wired as a matrix with 6 rows and 5 columns. The diode direction is column to rowi. Columns 1-4 are the finger towers, the last column attaches the 5way dpad. rows 1-5 are wired to button 1-5 on each finger, the sixth row is used to connect "special" keys like side keys, analog click and base key. See keymap code in the qmk repo for details. To read the thumbstick press via the key matrix you will have to cut some traces on the analog stick pcb and solder the colmn & row wires directly to the button pins.
+
 ![electronics](images/replicazeron_electronics.JPG "electronics")
 
 ![matrix_connector](images/replicazeron_matrix_connector.JPG "matrix_connector")
