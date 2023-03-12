@@ -2,6 +2,12 @@
 
 modified parts for QMK powered replicazeron build with STM32F103
 
+![replicazeron](images/replicazeron.JPG "replicazeron")
+
+This repo only contains complementary part to this project:
+
+https://sites.google.com/view/alvaro-rosati/azeron-keypad-diy-tutorial
+
 ## HowTo: Build & flash QMK
 
  - clone firmware
@@ -17,7 +23,7 @@ modified parts for QMK powered replicazeron build with STM32F103
  - Build firmware
    ```bash
    cd qmk-firmware
-   make keyboards/handwired/replicazeron/stm32:via
+   make handwired/replicazeron/stm32f103:via
    ```
  - Flash firmware with ```dfu-util```
    ```bash
@@ -25,13 +31,24 @@ modified parts for QMK powered replicazeron build with STM32F103
    ```
  - Or  build & Flash firmware in one go
    ```bash
-   make keyboards/handwired/replicazeron/stm32:via:dfu-util # this only works after qmk is running on the stm32
+   make handwired/replicazeron/stm32:via:dfu-util # this only works after qmk is running on the stm32
    ```
  
-
-
 ## Related repos
 
 [replicazeron qmk-firmware fork](https://github.com/9R/qmk_firmware)
 
+[replicazeron via-keyboards fork](https://github.com/9R/keyboards)
+
 [replicazeron STM32F103 bluepill schematics](https://github.com/9R/replicazeron_schematics)
+
+## Pictures
+
+
+![lighting](images/replicazeron_lighting.JPG "lighting")
+
+![oled](images/replicazeron_oled.JPG "oled")
+
+![electronics](images/replicazeron_electronics.JPG "electronics")
+
+![matrix_connector](images/replicazeron_matrix_connector.JPG "matrix_connector")
