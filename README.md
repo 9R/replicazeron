@@ -8,6 +8,16 @@ This repo only contains complementary part to this project:
 
 https://sites.google.com/view/alvaro-rosati/azeron-keypad-diy-tutorial
 
+## Features
+
+ * 23 keys
+ * analog stick with WASD emulation
+ * 5-way dpad
+ * OLED display displaying status info and basic configuration
+ * 2 status LEDS
+ * 6x WS2812 RGB-LED lighting
+ * layout editing and oled control using [via](https://www.caniusevia.com/) withou the need to reflash
+
 ## HowTo: Build & flash QMK
 
  - clone firmware
