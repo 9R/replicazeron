@@ -17,7 +17,7 @@ https://sites.google.com/view/alvaro-rosati/azeron-keypad-diy-tutorial
  - setup qmk environment via package management or in python venv
    ```bash
    python -m venv venv
-   cd venv
+   source venv/bin activate # you'll need to repeat this after leaving the venv. the other steps only need to be executed once
    pip install qmk
    ```
  - Build firmware
