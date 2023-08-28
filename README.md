@@ -6,7 +6,7 @@ modified parts for QMK powered replicazeron build with STM32F103
 
 This repo only contains complementary parts to this project:
 
-![DIY Azeron](https://sites.google.com/view/alvaro-rosati/azeron-keypad-diy-tutorial)
+[DIY Azeron](https://sites.google.com/view/alvaro-rosati/azeron-keypad-diy-tutorial)
 
 ## Features
 
