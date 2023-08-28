@@ -32,6 +32,9 @@ A build is also possible with an ATmega32 promicro, but this dev board does not 
 ### Display
 This build uses a **ssd1306** OLED with 128x32 pixels. The 128x64 pixel version of the ssd1306 should also work but would need a modified housing.
 
+### Adressable LED strip
+For optional lighting an addressable WS2612 LED-strip with 6 LEDs is used.
+
 ### Wires
 I used a bit of old network cable to get some easily distinguishable wires. Bonus: The shielding can be used as a nice looking liner to route the cables from the fingers to the base.
 
