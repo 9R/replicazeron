@@ -35,6 +35,10 @@ This build uses a **ssd1306** OLED with 128x32 pixels. The 128x64 pixel version 
 ### Wires
 I used a bit of old network cable to get some easily distinguishable wires. Bonus: The shielding can be used as a nice looking liner to route the cables from the fingers to the base.
 
+To connect the wireing to the MCU I used 2.56mm pitch dupond wires, pin headers and a bit of bread board.
+
+For the switch matrix to work you will also need 30 signal dios (i.e. 1N4148).
+
 ### Fastener(s)
 In addition to the fasteners required for the DIY Azeron you will need one M3x10 screw to attach the display
 
