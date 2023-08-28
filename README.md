@@ -31,7 +31,7 @@ The listed parts are only what I used to build the Replicazeron. With minor chan
 | STM32F103 dev board      | MCU                          |           1 |
 | ssd1306 128x32           | display                      |           1 |
 | WS2812 (on strip)        | addressable LEDs             |           6 |
-| M3x10                    | screw for display attachment |           1 |
+| M3x10  ISO1207           | display * LED attachment     |           2 |
 | 1N4148 diodes            | switch matrix diodes         |          30 |
 | leftover ethernetwire    | wireing & liner              |         <2m |
 | bit of bread board       |                              | ~8x13 holes |
