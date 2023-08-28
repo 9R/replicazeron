@@ -20,9 +20,24 @@ This repo only contains complementary parts to this project:
 
 ## BOM
 
+### tldr BOM
+
 In addition to the BOM required for the DYI Azeron & the modified printable [STLs](https://github.com/9R/replicazeron/tree/main/STLs) from this repo you will need the following parts.
 
 The listed parts are only what I used to build the Replicazeron. With minor changes to the configuration a build should be possible with any other MCU & display that is supported by QMK.
+
+|part                      | function                     | quantity    |
+|--------------------------|------------------------------|-------------|
+| STM32F103 dev board      | MCU                          |           1 |
+| ssd1306 128x32           | display                      |           1 |
+| WS2812 (on strip)        | addressable LEDs             |           6 |
+| M3x10                    | screw for display attachment |           1 |
+| 1N4148 diodes            | switch matrix diodes         |          30 |
+| leftover ethernetwire    | wireing & liner              |         <2m |
+| bit of bread board       |                              | ~8x13 holes |
+| 2.56mm pitch pin headers |                              |         ~50 |
+| dupond jumper wires      |                              |         ~25 |
+| some shrink tube         |                              |             |
 
 ### MCU
 Recommended MCU is an STM32F103 on a bluepill dev board.
