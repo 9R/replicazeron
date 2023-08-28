@@ -120,7 +120,9 @@ Install caterina bootloader on you promicro
 Use the [schematics](https://raw.githubusercontent.com/9R/replicazeron_schematics/main/replicazeron_sch.pdf) as reference.
 
 Columns 1 to 4 are the finger towers, the last column attaches the 5way dpad.
+
 Rows 1 to 5 are wired to button 1 to 5 on each finger.
+
 The sixth row is used to connect "special" keys like side keys, analog click and base key.
 
 ![electronics](images/replicazeron_electronics.JPG "electronics")
