@@ -6,7 +6,7 @@ modified parts for QMK powered replicazeron build with STM32F103
 
 This repo only contains complementary parts to this project:
 
-https://sites.google.com/view/alvaro-rosati/azeron-keypad-diy-tutorial
+![DIY Azeron](https://sites.google.com/view/alvaro-rosati/azeron-keypad-diy-tutorial)
 
 ## Features
 
@@ -16,7 +16,27 @@ https://sites.google.com/view/alvaro-rosati/azeron-keypad-diy-tutorial
  * OLED display displaying status info and basic configuration
  * 2 status LEDS
  * 6x WS2812 RGB-LED lighting
- * layout editing and oled control using [via](https://www.caniusevia.com/) withou the need to reflash
+ * layout editing and oled control from PC using [via](https://www.caniusevia.com/) without the need to reflash the firmware
+
+## BOM
+
+In addition to the BOM required for the DYI Azeron & the modified printable [STLs](https://github.com/9R/replicazeron/tree/main/STLs) from this repo you will need the following parts.
+
+The listed parts are only what I used to build the Replicazeron. With minor changes to the configuration a build should be possible with any other MCU & display that is supported by QMK.
+
+### MCU
+Recommended MCU is an STM32F103 on a bluepill dev board.
+
+A build is also possible with an ATmega32 promicro, but this dev board does not have enough GPIOs to attach a LED strip.
+
+### Display
+This build uses a **ssd1306** OLED with 128x32 pixels. The 128x64 pixel version of the ssd1306 should also work but would need a modified housing.
+
+### Wires
+I used a bit of old network cable to get some easily distinguishable wires. Bonus: The shielding can be used as a nice looking liner to route the cables from the fingers to the base.
+
+### Fastener(s)
+In addition to the fasteners required for the DIY Azeron you will need one M3x10 screw to attach the display
 
 ## Prepare devboard
 
@@ -72,6 +92,7 @@ Install caterina bootloader on you promicro
 
  - After qmk is running on the controller, build and flash in one go with
    ```bash
+   # pressing the pinky button second closesed to the palm on the settings layer in default mapping will activate reboot to lash mode
    qmk flash
    ```
  
@@ -94,7 +115,9 @@ Install caterina bootloader on you promicro
 
 Use the [schematics](https://raw.githubusercontent.com/9R/replicazeron_schematics/main/replicazeron_sch.pdf) as reference.
 
-The buttons are wired as a matrix with 6 rows and 5 columns. The diode direction is column to row. Columns 1-4 are the finger towers, the last column attaches the 5-way dpad. Rows 1 to 5 are wired to buttons 1 to 5 on each finger, the sixth row is used to connect "special" keys like side keys, analog stick click and base key. See keymap code in the qmk repo at `keyboards/handwired/replicazeron/keymaps/*/keymap.c` for details.
+Columns 1 to 4 are the finger towers, the last column attaches the 5way dpad.
+Rows 1 to 5 are wired to button 1 to 5 on each finger.
+The sixth row is used to connect "special" keys like side keys, analog click and base key.
 
 ![electronics](images/replicazeron_electronics.JPG "electronics")
 
