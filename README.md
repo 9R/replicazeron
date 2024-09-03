@@ -16,7 +16,7 @@ This repo only contains complementary parts to this project:
  * OLED display displaying status info and basic configuration
  * 2 status LEDS
  * 6x WS2812 RGB-LED lighting
- * layout editing and oled control from PC using [via](https://www.caniusevia.com/) without the need to reflash the firmware
+ * layout editing and oled control from PC using [VIA](https://www.caniusevia.com/) without the need to reflash the firmware
 
 ## BOM
 
@@ -97,6 +97,21 @@ Install caterina bootloader on you promicro
    qmk config user.keyboard=handwired/replicazeron/promicro
 
    #set default keymap:
+   qmk config user.keymap=default
+   ```
+
+ - VIA support (optional)
+   
+   This is necessary to use replicazeron with VIA since the
+   removal of via keymaps from QMK in August 2024. 
+   ```bash
+   # clone userspace keymap repo
+   git clone https://github.com/9R/qmk_userspace_via
+   
+   # add userspace repo to qmk config
+   qmk config user.overlay_dir="$(realpath qmk_userspace)"
+
+   # set default keymap to via
    qmk config user.keymap=via
    ```
 
