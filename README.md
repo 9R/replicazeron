@@ -16,7 +16,7 @@ This repo only contains complementary parts to this project:
  * OLED display displaying status info and basic configuration
  * 2 status LEDS
  * 6x WS2812 RGB-LED lighting
- * layout editing and oled control from PC using [VIA](https://www.caniusevia.com/) without the need to reflash the firmware
+ * layout editing and oled control from PC using [VIA](https://www.caniusevia.com/) or [Vial](https:/get.vial.today) without the need to reflash the firmware
 
 ## BOM
 
@@ -138,6 +138,8 @@ Install caterina bootloader on you promicro
 [replicazeron qmk-firmware fork](https://github.com/9R/qmk_firmware)
 
 [replicazeron via-keyboards fork](https://github.com/9R/keyboards)
+
+[replicazeron vial-qmk firmware fork](https://github.com/9R/vial-qmk)
 
 [replicazeron STM32F103 bluepill schematics](https://github.com/9R/replicazeron_schematics)
 
