@@ -132,23 +132,6 @@ Install caterina bootloader on you promicro
    # pressing the pinky button second closesed to the palm on the settings layer in default mapping will activate reboot to lash mode
    qmk flash
    ```
- 
-## Related repos
-
-[replicazeron qmk-firmware fork](https://github.com/9R/qmk_firmware)
-
-[replicazeron via-keyboards fork](https://github.com/9R/keyboards)
-
-[replicazeron vial-qmk firmware fork](https://github.com/9R/vial-qmk)
-
-[replicazeron STM32F103 bluepill schematics](https://github.com/9R/replicazeron_schematics)
-
-## Pictures
-
-
-![lighting](images/replicazeron_lighting.JPG "lighting")
-
-![oled](images/replicazeron_oled.JPG "oled")
 
 ## Wireing
 
@@ -169,3 +152,85 @@ To read the thumbstick press via the key matrix you will have to cut some traces
 
 
 ![analog stick pcb front](images/thumbstick_pcb_cuts.JPG "thumbstick pcb")
+
+## Usage
+
+### Default Keybindings
+
+The default firmware has four input layers. The name of the active layer is displayed on the OLED-screen.
+
+To cycle through layers press the button on the right side of the base.
+
+#### Layer 0: Default
+![analog stick pcb front](images/layer_0.jpg "Default layer keybindings")
+
+#### Layer 1 & 2: Shooter / Misc
+
+The second and third layers have no keys assigned by default execpt for the D-Pad and the change-layer-key.
+![analog stick pcb front](images/layer_1-2.jpg "Empty layer keybindings")
+
+#### Layer 3: Settings
+![analog stick pcb front](images/layer_3.jpg "Settings layer keybindings")
+
+### Tumb Stick Modes
+
+The thumb stick can operate in three modes: `WASD`, `WASD + Shift` and `Joystick`.
+
+In any mode the thumb stick position is available as two axis analog joystick.
+
+The active mode is displayed on the OLED and can be changed on the settings layer (`ThumbMode` key).
+
+| Mode           | Explanation                                                                             |
+|----------------|-----------------------------------------------------------------------------------------|
+| `WASD`         | `w` `a` `s` `d` key presses based on the position of the thumb stick                    |
+| `WASD + Shift` | `w` `a` `s` `d` below and  `W` `A` `S` `D` if thumb stick is above _SHIFTZONE threshold |
+| `Joystick`     | `WASD`-Emulation is inactive                                                            |
+
+## Customization
+
+### Keybindings
+
+Default keybindings can be comfortably edited with  [VIA](https://www.caniusevia.com/) or [Vial](https:/get.vial.today) in a webGUI or standalone application. Changes made with the GUI will be saved on the replicazeron, do not require the GUI to permanently run and are persistent over reboots and reflashes. Press `Clr ROM` key to reset to defaults.
+
+Additionally multiple layout presets can be saved and loaded with the GUI on/from a PC.
+
+Even though not recommended, it is also possible to edit default keybindings in the [code](https://github.com/9R/qmk_firmware/blob/replicazeron/keyboards/handwired/replicazeron/keymaps/default/keymap.c#L21-L56).
+
+Available keycodes and their meaning can be found in the [QMK documentation](https://docs.qmk.fm/keycodes).
+
+#### Replicazeron specific keycodes 
+
+|  Key        | Function                                                           |
+|-------------|--------------------------------------------------------------------|
+| `Reset`     | Reset Controller (to enter firmware flash mode)                    |
+| `Clr ROM`   | Clear EPROM. Resets to defaults (keybindings / LED animation)      |
+| `ThumbMode` | Cycle through thumbstick modes                                     |
+| `AutoRun`   | Toggle autoRun                                                     |
+
+### Thumbstick
+
+The [three parameters](https://github.com/9R/qmk_firmware/blob/replicazeron/keyboards/handwired/replicazeron/config.h#L26-L28), that control the way the thumb stick WASD-emulation behaves currently can only be modified in the source code.
+
+While on the settings layer the OLED display shows debug info that can be used to quickly find alternate values matching personal preference.
+
+| Parameter            | Meaning                                                                                                        |
+|----------------------|----------------------------------------------------------------------------------------------------------------|
+| _DEADZONE            | Distance from center where no keypresses are send                                                              |
+| _SHIFTZONE           | Above this distance from center `W` `A` `S` `D` instead of `w` `a` `s` `d` will be send in `WASD + Shift` mode |
+| _THUMBSTICK_ROTATION | Modify to adjust the "forward direction"                                                                       |
+ 
+## Related repos
+
+[replicazeron qmk-firmware fork](https://github.com/9R/qmk_firmware)
+
+[replicazeron via-keyboards fork](https://github.com/9R/keyboards)
+
+[replicazeron vial-qmk firmware fork](https://github.com/9R/vial-qmk)
+
+[replicazeron STM32F103 bluepill schematics](https://github.com/9R/replicazeron_schematics)
+
+## Pictures
+
+![lighting](images/replicazeron_lighting.JPG "lighting")
+
+![oled](images/replicazeron_oled.JPG "oled")
