@@ -69,7 +69,7 @@ This step is only required once.
 Install the stm32duino bootloader [from this repo](https://github.com/rogerclarkmelbourne/STM32duino-bootloader). The correct prebuild binary for a stm bluepill is `binaries/generic_boot20_pc13.bin`
 
 ### STM32F103 bluepill-plus([WeActStudio](https://github.com/WeActStudio/BluePill-Plus))
-Install the stm32duino bootloader [from this repo](https://github.com/Mariappan/STM32duino-bootloader/tree/mario). The correct prebuild binary for a stm bluepill is `bootloader_only_binaries/generic_boot20_pb2.bin`
+Install the stm32duino bootloader [from this repo](https://github.com/Mariappan/STM32duino-bootloader/tree/mario). The correct prebuild binary for a stm bluepill-plus is `bootloader_only_binaries/generic_boot20_pb2.bin`
 
 Flash the bootloader with [stlink](https://github.com/stlink-org/stlink).
 
