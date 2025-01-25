@@ -42,6 +42,8 @@ The listed parts are only what I used to build the Replicazeron. With minor chan
 ### MCU
 Recommended MCU is an STM32F103 on a bluepill dev board.
 
+**⚠ Warning:** Nowadays it seems various sellers advertise dev boards with *almost* compatible MCUs as bluepills. Make sure to get a genuine STM32 or you might run into hard to debug issues.
+
 A build is also possible with an ATmega32 promicro, but this dev board does not have enough GPIOs to attach a LED strip.
 
 ### Display
