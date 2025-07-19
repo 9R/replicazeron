@@ -14,9 +14,14 @@ This repo only contains complementary parts to this project:
  * analog stick with WASD emulation
  * 5-way dpad
  * OLED display displaying status info and basic configuration
- * 2 status LEDS
- * 6x WS2812 RGB-LED lighting
+ * 2 status LEDs, showing active layer
+    * 2 normal LEDs or
+    * 2 addressable RGB-LEDs connected to the addressable backlight
+ * 6x addressable RGB-LED backlighting
  * layout editing and oled control from PC using [VIA](https://www.caniusevia.com/) or [Vial](https:/get.vial.today) without the need to reflash the firmware
+ * support for alternate MCUs
+   * rp2040
+   * promicro
 
 ## BOM
 
@@ -26,18 +31,22 @@ In addition to the BOM required for the DYI Azeron & the modified printable [STL
 
 The listed parts are only what I used to build the Replicazeron. With minor changes to the configuration a build should be possible with any other MCU & display that is supported by QMK.
 
-|part                        | function                     | quantity    |
-|----------------------------|------------------------------|-------------|
-| STM32F103 dev board        | MCU                          |           1 |
-| ssd1306 128x32             | display                      |           1 |
-| WS2812 (on strip)          | addressable LEDs             |           6 |
-| M3x10 ISO4762 "cheesehead" | display * LED attachment     |           2 |
-| 1N4148 diodes              | switch matrix diodes         |          30 |
-| leftover ethernetwire      | wireing & liner              |         <2m |
-| bit of bread board         |                              | ~8x13 holes |
-| 2.56mm pitch pin headers   |                              |         ~50 |
-| dupond jumper wires        |                              |         ~25 |
-| some shrink tube           |                              |             |
+|part                        | function                     | quantity    | alternative|
+|----------------------------|------------------------------|-------------|------------|
+| STM32F103 dev board        | MCU                          |           1 |            |
+| *rp2040 dev board*         | MCU                          |           1 |  x         |
+| *proMicro dev board*       | MCU                          |           1 |  x         |
+| ssd1306 128x32             | display                      |           1 |            |
+| WS2812 (on strip)          | addressable LEDs             |           6 |            |
+| WS2812 (5mm)               | addressable status RGB-LEDs  |           2 |            |
+| *5mm LEDs*                 | status LEDs                  |           2 |            |
+| M3x10 ISO4762 "cheesehead" | display * LED attachment     |           2 |            |
+| 1N4148 diodes              | switch matrix diodes         |          30 |            |
+| leftover ethernetwire      | wireing & liner              |         <2m |            |
+| bit of bread board         |                              | ~8x13 holes |            |
+| 2.56mm pitch pin headers   |                              |         ~50 |            |
+| dupond jumper wires        |                              |         ~25 |            |
+| some shrink tube           |                              |             |            |
 
 ### MCU
 Recommended MCU is an STM32F103 on a bluepill dev board.
@@ -96,10 +105,13 @@ Install caterina bootloader on you promicro
  - Set qmk defaults
    ```bash
    #set default keyboard:
-   qmk config user.keyboard=handwired/replicazeron
+   qmk config user.keyboard=handwired/replicazeron/stm32f103
 
    #if you are using a promicro specify the variant:
    qmk config user.keyboard=handwired/replicazeron/promicro
+
+   #if you are using a rp2040 specify the variant:
+   qmk config user.keyboard=handwired/replicazeron/rp2040
 
    #set default keymap:
    qmk config user.keymap=default
@@ -108,7 +120,7 @@ Install caterina bootloader on you promicro
  - VIA support (optional)
    
    This is necessary to use replicazeron with VIA since the
-   removal of via keymaps from QMK in August 2024. 
+   removal of via keymaps from QMK in August 2024.
    ```bash
    # clone userspace keymap repo
    git clone https://github.com/9R/qmk_userspace_via
@@ -119,6 +131,10 @@ Install caterina bootloader on you promicro
    # set default keymap to via
    qmk config user.keymap=via
    ```
+
+ - Set status-LED-type, OLED-rotation etc (optional)
+
+   Adjust peripherals activation and options to match your hardware setup at ```rules.mk``` and ```config.h``` in ```keyboards/handwired/replicazeron/``` and mcu-specific subfolders.
 
  - Build firmware
    ```bash
